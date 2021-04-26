@@ -33,7 +33,7 @@ export function url(strings: TemplateStringsArray, ...vars: unknown[]): URL {
   return new URL(contents);
 }
 
-export function withBase(baseUrl: string) {
+export function urlRelativeTo(baseUrl: string) {
   return (strings: TemplateStringsArray, ...vars: unknown[]): URL => {
     const contents = assembleSegments(strings, vars);
     return new URL(contents, baseUrl);
